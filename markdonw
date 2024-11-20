@@ -1,0 +1,13 @@
+A estrutura de dados que melhor atende a essas necessidades é uma fila de prioridade implementada como uma Priority Queue com duas filas subjacentes (uma para pedidos VIP e outra para pedidos normais).
+
+Ordem de Chegada com Prioridade: Como os pedidos devem ser processados em ordem de chegada, uma fila (FIFO) é ideal para gerenciar essa sequência. A implementação com duas filas (uma para VIPs e outra para não VIPs) permite que os pedidos VIP sejam atendidos com prioridade, sem quebrar a ordem de chegada entre pedidos do mesmo tipo (VIP ou normal).
+
+Remoção de Pedidos: Uma fila de prioridade facilita a remoção de pedidos com um sistema de marcação ou pesquisa, permitindo que o pedido seja removido da fila específica (VIP ou não VIP) sem prejudicar a ordem dos demais.
+
+Visualização dos Pedidos em Espera: Para atender ao requisito de visualização sem remoção, uma estrutura de dados que permita apenas acessar elementos sem descarte é ideal. Em uma fila de prioridade, é possível iterar sobre os elementos sem removê-los.
+
+Utilizei duas filas FIFO (uma para pedidos VIP e outra para pedidos normais) encapsuladas dentro de uma Priority Queue torna a implementação mais simples e eficiente, pois:
+
+Manutenção da prioridade: A fila VIP é sempre processada antes da fila normal.
+Facilidade de cancelamento: A remoção específica pode ser feita buscando o pedido nas filas.
+O(1) para visualização: É possível acessar o topo da fila sem removê-lo.
